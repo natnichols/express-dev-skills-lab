@@ -30,8 +30,21 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Skill.findById(req.params.skillId).then(skill => {
+    res.render('skills/show', {
+      skill: skill
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/skills')
+  })
+}
+
 export {
   index,
   newSkill as new,
   create,
+  show,
 }

@@ -8,9 +8,9 @@
 <body>
   <h1>Dev Skills</h1>
   <ul>
-    <% skills.forEach(skill => { %>
+    <% skills.forEach(function(skill) { %>
       <li>
-        <%= skill.text %> 
+        <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
         - 
         <%= skill.learned ? 'learned in class' : 'not yet learned in class' %>
       </li>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Skill Details</title>
+</head>
+<body>
+  <h1>Skill Details</h1>
+  <h2>Skill #<%= skill._id %></h2>
+  <h3><%= skill.text %></h3>
+  <p>Learned in class: <%= skill.learned ? 'Yes' : 'Not Yet' %></p>
+  <a href="/skills">Go back to Skills List</a>
+</body>
+</html>
