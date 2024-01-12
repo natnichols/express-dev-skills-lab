@@ -10,7 +10,7 @@ function index(req, res) {
     })
   })
   .catch(error => {
-    console.log(error)
+    console.log(`💥`, error)
     res.redirect('/')
   })
 }
@@ -26,7 +26,7 @@ function create(req, res) {
     res.redirect('/skills')
   })
   .catch(error => {
-    console.log(error)
+    console.log(`💥`, error)
     res.redirect('/skills')
   })
 }
@@ -38,14 +38,25 @@ function show(req, res) {
     })
   })
   .catch(error => {
-    console.log(error)
+    console.log(`💥`, error)
+    res.redirect('/skills')
+  })
+}
+
+function deleteSkill(req, res) {
+  Skill.findByIdAndDelete(req.params.skillId).then(skill => {
+    res.redirect('/skills')
+  })
+  .catch(error => {
+    console.log(`💥`, error)
     res.redirect('/skills')
   })
 }
 
 export {
   index,
+  show,
   newSkill as new,
   create,
-  show,
+  deleteSkill as delete,
 }
