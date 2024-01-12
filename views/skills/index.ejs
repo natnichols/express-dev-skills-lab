@@ -14,12 +14,13 @@
         <form action="/skills/<%= skill._id %>?_method=DELETE" class="delete-form" method="POST">
           <button type="submit">❌</button>
         </form>
+        <a href="/skills/<%= skill._id %>/edit"><button class="edit-button">✏️</button></a>
         <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
         - 
         <%= skill.learned ? 'learned in class' : 'not yet learned in class' %>
       </li>
     <% }) %>
   </ul>
-  <a href="/skills/new">Add New Skill</a>
+  <a href="/skills/new">💡 Add New Skill</a>
 </body>
 </html>

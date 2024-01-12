@@ -10,12 +10,12 @@ router.get('/new', skillsCtrl.new)
 // GET localhost:3000/skills/:skillId
 router.get('/:skillId', skillsCtrl.show)
 // GET localhost:3000/skills/:skillId/edit
-
+router.get('/:skillId/edit', skillsCtrl.edit)
 // POST localhost:3000/skills
 router.post('/', skillsCtrl.create)
 // DELETE localhost:3000/skills/:skillId
 router.delete('/:skillId', skillsCtrl.delete)
 // PUT localhost:3000/skills/:skillId (update)
-
+router.put('/:skillId', skillsCtrl.update)
 
 export { router }
